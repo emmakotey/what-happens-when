@@ -689,6 +689,27 @@ the Google homepage. Scripts can cause additional network requests to be
 performed, as well as modify the page or its layout, causing another round of
 page rendering and painting.
 
+DNS Lookup
+-------------
+
+DNS lookup is the process of resolving a domain name (such as www.example.com) to an IP address (such as 192.168.0.1) using the Domain Name System (DNS). DNS is a system that translates human-readable domain names into IP addresses, which are the numerical addresses that computers use to identify each other on the internet.
+
+DNS lookup typically involves the following steps:
+
+Request initiation: When a user enters a URL (Uniform Resource Locator) or clicks on a link in a web browser, the browser sends a request to the local DNS resolver to resolve the domain name in the URL.
+
+Recursive DNS resolution: The local DNS resolver first checks its own cache to see if it has the IP address for the domain name. If it doesn't, it forwards the request to one or more recursive DNS servers, also known as DNS resolvers. These DNS resolvers are responsible for recursively resolving the domain name by querying other DNS servers in the hierarchical DNS system.
+
+Root DNS server query: If the recursive DNS server doesn't have the IP address for the domain name in its cache, it queries the root DNS servers. The root DNS servers are the top level of the DNS hierarchy and contain information about the top-level domains (TLDs), such as .com, .org, .net, etc.
+
+TLD DNS server query: Based on the TLD of the domain name, the root DNS server provides the IP address of the corresponding TLD DNS server. The recursive DNS server then queries the TLD DNS server for the authoritative DNS server for the domain name.
+
+Authoritative DNS server query: The authoritative DNS server is responsible for storing the actual IP address associated with the domain name. The recursive DNS server queries the authoritative DNS server for the IP address of the domain name.
+
+DNS resolution and caching: Once the recursive DNS server receives the IP address from the authoritative DNS server, it returns the IP address to the local DNS resolver, which in turn returns it to the user's web browser. The IP address is then used by the web browser to establish a connection with the web server hosting the website associated with the domain name. The recursive DNS server also caches the IP address for future use, which helps improve the performance and efficiency of DNS resolution.
+
+It's worth noting that DNS lookup is typically a fast process and happens transparently in the background when you access a website or other resources on the internet. DNS caching helps to speed up subsequent requests for the same domain name, as the cached IP address can be used instead of repeating the entire lookup process.
+
 .. _`Creative Commons Zero`: https://creativecommons.org/publicdomain/zero/1.0/
 .. _`"CSS lexical and syntax grammar"`: http://www.w3.org/TR/CSS2/grammar.html
 .. _`Punycode`: https://en.wikipedia.org/wiki/Punycode
